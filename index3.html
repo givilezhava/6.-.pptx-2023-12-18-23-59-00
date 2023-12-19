@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    input {
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<input type="text" id="numberInput" placeholder="Enter numbers (e.g., 1:2:3:4:12:5)">
+<button onclick="calculateAverage()">Calculate Average</button>
+<p id="averageOutput"></p>
+
+<script>
+  function calculateAverage() {
+    const numberInput = document.getElementById('numberInput').value;
+    const numbers = numberInput.split(':').map(Number);
+
+    if (numbers.every(isNumber)) {
+      const average = numbers.reduce((sum, num) => sum + num, 0) / numbers.length;
+      document.getElementById('averageOutput').textContent = Average: ${average.toFixed(2)};
+    } else {
+      alert('Invalid input! Please enter numbers separated by colons.');
+    }
+  }
+
+  function isNumber(value) {
+    return typeof value === 'number' && !isNaN(value);
+  }
+</script>
+
+</body>
+</html>

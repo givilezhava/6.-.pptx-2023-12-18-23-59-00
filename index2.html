@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    input {
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<input type="text" id="colorInput" placeholder="Enter color (red, green, blue, white, black)">
+<button onclick="changeBackgroundColor()">Change Background Color</button>
+
+<script>
+  function changeBackgroundColor() {
+    const colorInput = document.getElementById('colorInput').value.toLowerCase();
+    const body = document.body;
+
+    switch (colorInput) {
+      case 'red':
+      case 'green':
+      case 'blue':
+      case 'white':
+      case 'black':
+        body.style.backgroundColor = colorInput;
+        break;
+      default:
+        alert('Wrong color! Please enter red, green, blue, white, or black.');
+        break;
+    }
+  }
+</script>
+
+</body>
+</html>
